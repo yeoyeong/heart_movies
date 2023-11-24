@@ -11,8 +11,9 @@ const useMasonryInfinity = (initialData: movielistsType[]) => {
       { length: windowWidth },
       () => []
     );
-    const result: movielistType[][] = newArr;
+    // const result: movielistType[][] = [...newArr];
     // cur = arr[i], acc = arr
+
     initialData.map(({ results }: { results: movielistType[] }) => {
       const reduce_data = results.reduce((acc, cur, idx) => {
         acc[idx % acc.length].push(cur);
@@ -26,7 +27,7 @@ const useMasonryInfinity = (initialData: movielistsType[]) => {
         return item;
       });
     });
-    setItemList(result);
+    setItemList(newArr);
   }, [windowWidth, initialData]);
 
   return { itemList, windowWidth };

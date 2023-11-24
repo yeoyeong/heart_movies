@@ -3,7 +3,7 @@
   line-height: 1;
   font-weight: 400;
   color: #333;
-  background-color: #fff;
+  background-color: black;
   
   text-rendering: optimizeLegibility; /*텍스트 렌더링 방식을 설정합니다. 여기서는 가독성을 최적화하도록 설정하였습니다.*/
   -webkit-font-smoothing: antialiased; /* 이 속성은 웹킷 브라우저(예: Chrome, Safari)에서 글자의 가장자리를 부드럽게 하는 방식을 설정합니다. */

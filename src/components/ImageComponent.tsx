@@ -22,6 +22,7 @@ const ImageComponent = ({
       {!isLoaded && <Item />}
       {
         <Img
+          referrerPolicy="no-referrer"
           src={imageUrl}
           alt={alt}
           style={{

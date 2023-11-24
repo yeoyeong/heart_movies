@@ -2,6 +2,8 @@ import { RouteObject } from "react-router-dom";
 import HomePage from "../app/home/home-page";
 import DetailPage from "../app/movie/[detail]/detail-page";
 import MoviePage from "../app/movie/movie-page";
+import PageNotFound from "@src/app/404-page";
+import ErrorPage from "@src/app/error-page";
 
 // type routerType = {
 //   path: string;
@@ -31,7 +33,13 @@ const publicPages: ExtendedRouteObject[] = [
   {
     path: "/",
     element: <HomePage />,
+    errorElement: <ErrorPage />,
     index: true,
+    role: 1,
+  },
+  {
+    path: "*",
+    element: <PageNotFound />,
     role: 1,
   },
   {

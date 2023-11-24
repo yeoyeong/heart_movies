@@ -3,20 +3,34 @@ import ListSkeleton from "./list-skeleton";
 import List from "./movie-list";
 import { useGetMovies } from "../(queries)/useGetMovies";
 import useWindowWidth from "../(hook)/useWindowWidth";
+import useIntersect from "../(hook)/useIntersect";
 
 const MovieListWrap = () => {
-  const { contents: movieLists, status, fetchNextPage } = useGetMovies();
+  const {
+    contents: movieLists,
+    status,
+    fetchNextPage,
+    isFetching,
+    hasNextPage,
+  } = useGetMovies();
   const { windowWidth } = useWindowWidth(240);
+
+  const ref = useIntersect(async (entry, observer) => {
+    observer.unobserve(entry.target);
+    if (hasNextPage && !isFetching) {
+      fetchNextPage();
+    }
+  });
+
   // {status === "success" &&
   //       movieLists?.pages.map((movieList, index) => (
   //         <List key={index} movieList={movieList.results} />
   //       ))}
-  console.log(movieLists);
   return (
     <Container $windowWidth={windowWidth}>
       {status === "loading" && !movieLists && <ListSkeleton />}
       {status === "success" && movieLists && <List movieLists={movieLists} />}
-      <button onClick={() => fetchNextPage()}>페이지늘어나기</button>
+      <Target ref={ref} />
     </Container>
   );
 };
@@ -25,7 +39,7 @@ export default MovieListWrap;
 const Container = styled.section<{ $windowWidth: number }>`
   /* display: grid; */
   /* gap: 20px; */
-  padding: 0 20px;
+  padding: 20px 20px;
 
   /* display: grid;
   flex-flow: row wrap;
@@ -33,4 +47,8 @@ const Container = styled.section<{ $windowWidth: number }>`
   grid-template-rows: masonry; */
   column-count: ${(props) => props.$windowWidth};
   column-gap: 1em;
+`;
+
+const Target = styled.div`
+  height: 1px;
 `;

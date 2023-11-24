@@ -5,11 +5,10 @@ import { getMovie } from "../(api)/get-movie";
 export const useGetMovies = () => {
   // const { campaignListOption } = adcenterStore();
   const [searchParams] = useSearchParams();
-  const page = Number(searchParams.get("page"));
   const category = searchParams.get("category");
+
   const movieListOption = {
-    page,
-    category: category as string,
+    category: category ? category : "popular",
   };
 
   //movies나, campaignListOption 이 바뀌면 재랜더링
@@ -20,11 +19,8 @@ export const useGetMovies = () => {
     ["movies", movieListOption],
     ({ pageParam = 1 }) => getMovie({ ...movieListOption, page: pageParam }),
     {
-      getNextPageParam: (lastPage, allPosts) => {
-        return lastPage.page !== allPosts[0].totalPage
-          ? lastPage.page + 1
-          : undefined;
-      },
+      getNextPageParam: ({ page: lastePage }, allPosts) =>
+        lastePage !== allPosts[0].total_pages ? lastePage + 1 : undefined,
     }
   );
 
@@ -32,5 +28,8 @@ export const useGetMovies = () => {
     status: result.status,
     contents: result.data,
     fetchNextPage: result.fetchNextPage,
+    hasNextPage: result.hasNextPage,
+    isFetching: result.isFetching,
   };
 };
+//isFetching은 어떠한 react-query요청 내부의 비동기 함수가 처리되었는지 여부 에 따라 true/false로 나누어 진다.
