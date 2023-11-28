@@ -6,7 +6,7 @@ import { GoogleAuthProvider, signInWithPopup, signOut } from "firebase/auth";
 import { addDoc, collection } from "firebase/firestore";
 
 function useAuthHandler() {
-  const { setAuth } = globalStore();
+  const { setAuth, setAuthInfoToggle } = globalStore();
   const { getHeartListApi } = useMovieHeartApi();
   // const { getHeartListApi } = useGetHeartList();
   const { setHeartIdList } = movieStore();
@@ -57,6 +57,7 @@ function useAuthHandler() {
       email: null,
       photoURL: null,
     }));
+    setAuthInfoToggle(false);
     setHeartIdList(() => null);
     try {
       await signOut(auth);
