@@ -23,7 +23,6 @@ export const useGetMovies = () => {
         lastePage !== allPosts[0].total_pages ? lastePage + 1 : undefined,
     }
   );
-
   return {
     status: result.status,
     contents: result.data,

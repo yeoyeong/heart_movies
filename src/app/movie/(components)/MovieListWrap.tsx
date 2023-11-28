@@ -16,7 +16,7 @@ const MovieListWrap = () => {
   const { windowWidth } = useWindowWidth(240);
 
   const ref = useIntersect(async (entry, observer) => {
-    observer.unobserve(entry.target);
+    observer.unobserve(entry.target); //옵저버 제거 더 이상 해당 오브젝트 관찰 x
     if (hasNextPage && !isFetching) {
       fetchNextPage();
     }
