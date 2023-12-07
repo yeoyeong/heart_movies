@@ -59,7 +59,7 @@ const data = [[1,3,5,7,9],[2,4,6,8,10]]
 ```
 
 ex) Window 480px
-![img](https://file.notion.so/f/f/1ef4d1fb-d922-48bc-8e73-c05e1104adb4/a5014cd1-1af5-4f9f-a69b-0c7e3af77617/Untitled.png?id=5d2a8f00-2536-4119-92c9-888c916ce5f7&table=block&spaceId=1ef4d1fb-d922-48bc-8e73-c05e1104adb4&expirationTimestamp=1702080000000&signature=avPDE-6Tb2XkOqIeM7Zlvez2LWUFynJens3Jaob3mHs&downloadName=Untitled.png)
+<img src="https://file.notion.so/f/f/1ef4d1fb-d922-48bc-8e73-c05e1104adb4/a5014cd1-1af5-4f9f-a69b-0c7e3af77617/Untitled.png?id=5d2a8f00-2536-4119-92c9-888c916ce5f7&table=block&spaceId=1ef4d1fb-d922-48bc-8e73-c05e1104adb4&expirationTimestamp=1702080000000&signature=avPDE-6Tb2XkOqIeM7Zlvez2LWUFynJens3Jaob3mHs&downloadName=Untitled.png"/>
 
 
 ### 반응형 랜더링 최적화, useDebouncedCallback()
