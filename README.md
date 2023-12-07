@@ -8,9 +8,10 @@ $ npm run dev
 
 
 
-####리팩토링 
-
+## 리팩토링 
+ 
 ### for문 ⇒ reduce
+ <hr/>
 
 **Before**
 
@@ -61,7 +62,8 @@ const data = [[1,3,5,7,9],[2,4,6,8,10]]
 ```
 
 ### 반응형 랜더링 최적화, useDebouncedCallback()
-
+ <hr/>
+ 
 **문제점**
 
 브라우저의 크기가 변경될 때마다 함수를 실행시켜서 영화 목록의 디자인을 수정해 주었었습니다. 이렇게 하면 사이즈를 한번 변경할때도 수십번의 재 렌더링이 일어나는 문제가 발생했습니다.
@@ -86,7 +88,8 @@ useEffect(() => {
 
 
 ### router Outlet => Query 
-
+ <hr/>
+ 
 영화 목록 페이지를 카테고리별로 라우팅을 할 생각이었지만
 
 기존 React-Router-Dom의 Outlet을 사용하여 관리했었는데
@@ -138,7 +141,8 @@ export default MoviePage;
 
 
 ### useQuery ⇒ useInfiniteQuery
-
+ <hr/>
+ 
 useQuery에서 useInfiniteQuery로 바꾸면서
 
 data return 형식이 변경되어서 
@@ -199,7 +203,8 @@ const { windowWidth } = useWindowWidth(240);
 받아온 초기값을 분해한 데이터를 reduce로 2차원배열을 만들고 새로운 배열로 push하는 작업을 하였습니다.
 
 ### styled component ThemeProvider ⇒ css root
-
+ <hr/>
+ 
 고민한 **이유** 
 
 1. 동적인 스타일이 필요없다
