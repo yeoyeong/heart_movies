@@ -60,7 +60,7 @@ const data = [[1,3,5,7,9],[2,4,6,8,10]]
 
 ex) Window 480px
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/1ef4d1fb-d922-48bc-8e73-c05e1104adb4/a5014cd1-1af5-4f9f-a69b-0c7e3af77617/Untitled.png)
+![img](https://prod-files-secure.s3.us-west-2.amazonaws.com/1ef4d1fb-d922-48bc-8e73-c05e1104adb4/a5014cd1-1af5-4f9f-a69b-0c7e3af77617/Untitled.png)
 
 
 
