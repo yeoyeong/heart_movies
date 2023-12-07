@@ -6,7 +6,9 @@ $ npm install
 $ npm run dev
 ~~~
 
-##리팩토링 
+
+
+####리팩토링 
 
 ### for문 ⇒ reduce
 
